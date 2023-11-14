@@ -1,6 +1,7 @@
 .inline {
   display: inline;
-  li {
-    display: inline;
-  }
+}
+
+.inline li {
+  display: inline;
 }
