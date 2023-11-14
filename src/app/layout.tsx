@@ -1,8 +1,11 @@
+import '@/styles/globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import { Inter, Pixelify_Sans } from 'next/font/google'
+import HeaderNavigation from "@/components/layout/HeaderNavigation/HeaderNavigation"
+import Footer from "@/components/layout/Footer/Footer"
 
 const inter = Inter({ subsets: ['latin'] })
+const pixelSans = Pixelify_Sans({subsets: ['latin'], variable: '--font-pixel'})
 
 export const metadata: Metadata = {
   title: 'Next.js Bits',
@@ -16,7 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} ${pixelSans.variable}`}>
+        <HeaderNavigation />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }

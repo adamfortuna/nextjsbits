@@ -38,6 +38,13 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+
+  --space-0-5: 0.125rem;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-4: 1rem;
+  --space-8: 2rem;
+  --space-16: 4rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -104,4 +111,10 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.container {
+  padding: var(--space-2) var(--space-4);
+  margin: 0 auto;
+  max-width: var(--max-width);
 }
