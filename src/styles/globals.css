@@ -45,6 +45,11 @@
   --space-4: 1rem;
   --space-8: 2rem;
   --space-16: 4rem;
+
+  --color-blue: #1373f9;
+  --color-blue-dark: #0737bd;
+
+  --color-secondary: #999;
 }
 
 @media (prefers-color-scheme: dark) {

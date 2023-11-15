@@ -3,7 +3,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-2) var(--space-4);
+  padding: var(--space-2) 0;
   margin: 0 auto;
   max-width: var(--max-width);
 }
@@ -14,7 +14,23 @@
 }
 
 .search {
-  border: 1px solid white;
-  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-blue-dark);
+  background-color: var(--color-blue);
+  padding: var(--space-2) var(--space-4);
+  cursor: pointer;
+}
+.search:hover {
+  background-color: var(--color-blue-dark);
+}
 
+.navLink {
+  font-family: var(--font-pixel);
+  font-size: 24px;
+  color: white;
+  padding: var(--space-2) var(--space-4);
+  margin: 0 var(--space-2);
+}
+.title:hover, .navLink:hover {
+  background-color: #fff;
+  color: #000;
 }

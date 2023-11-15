@@ -1,10 +1,12 @@
 export default function Container({
   children,
+  className = null
 }: {
-  children: React.ReactNode
+  children: React.ReactNode,
+  className?: string | null;
 }) {
   return (
-    <div className="container">
+    <div className={`container${className ? ` ${className}` : '' }`}>
       {children}
     </div>
   )

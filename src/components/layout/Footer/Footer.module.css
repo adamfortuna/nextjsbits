@@ -3,7 +3,15 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: var(--space-2) var(--space-4);
   margin: 0 auto;
   max-width: var(--max-width);
+}
+
+.link {
+  text-decoration: underline;
+  padding: var(--space-1) var(--space-2);
+  color: var(--color-secondary);
+}
+.link:hover {
+  text-decoration: none;
 }
