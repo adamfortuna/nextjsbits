@@ -15,7 +15,7 @@ export default function HeaderNavigation() {
           <nav>
             <ul className={list.inline}>
               <li>
-                <Link href="/new" className={styles.navLink}>Videos</Link>
+                <Link href="/episodes" className={styles.navLink}>Episodes</Link>
               </li>
               <li>
                 <Link href="/packages" className={styles.navLink}>Packages</Link>

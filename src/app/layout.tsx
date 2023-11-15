@@ -9,7 +9,7 @@ const pixelSans = Pixelify_Sans({subsets: ['latin'], variable: '--font-pixel'})
 
 export const metadata: Metadata = {
   title: 'Next.js Bits',
-  description: 'Quick Next.js videos when you need them most.',
+  description: 'Quick Next.js answers when you need them most.',
 }
 
 export default function RootLayout({
