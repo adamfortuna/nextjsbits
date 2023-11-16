@@ -1,3 +1,5 @@
+import { Md5 } from 'ts-md5'
+
 export const fetchClient = ({
   url,
   auth,
@@ -9,7 +11,17 @@ export const fetchClient = ({
   query: string
   variables?: any
 }) => {
-  return fetch(url, {
+  const hash = Md5.hashStr(
+    JSON.stringify({
+      ...{
+        url,
+        query,
+        auth,
+      },
+      ...variables,
+    }),
+  )
+  return fetch(`${url}#${hash})}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
