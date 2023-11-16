@@ -5,7 +5,7 @@ import HeaderNavigation from "@/components/layout/HeaderNavigation/HeaderNavigat
 import Footer from "@/components/layout/Footer/Footer"
 
 const inter = Inter({ subsets: ['latin'] })
-const pixelSans = Pixelify_Sans({subsets: ['latin'], variable: '--font-pixel'})
+const pixelSans = Pixelify_Sans({subsets: ['latin'], variable: '--font-pixel', display: 'swap', adjustFontFallback: false})
 
 export const metadata: Metadata = {
   title: 'Next.js Bits',

@@ -4,12 +4,13 @@ import Container from "@/components/layout/Container"
 import { PER_PAGE } from "@/constants"
 import { loadEpisodes } from "@/queries/episodes/loadEpisodes"
 
+export const revalidate = 3600
+
 export interface PageProps {
   params: {
     page?: string
   }
 }
-export const revalidate = 3600
 
 export default async function EpisodeIndexPage({ params: { page } }: PageProps) {
   const pageNumber = page ? Number(page) : 1

@@ -1,10 +1,11 @@
+import { gql } from 'graphql-request'
 import { EpisodeType, WordpressEpisodeType } from '@/types'
 import { PER_PAGE } from "@/constants"
 import { parseEpisode, sortByEpisodesNumberDesc } from "@/lib/wordpress/parser"
 import { wordpressClient } from "@/lib/wordpress/client"
 import EpisodeListFragment from "@/queries/fragments/EpisodeListFragment"
 
-export const findEpisodes = `
+export const findEpisodes = gql`
 ${EpisodeListFragment}
 query GetEpisodes($where: RootQueryToEpisodeConnectionWhereArgs) {
   episodes(first: 1000, where: $where) {
@@ -14,6 +15,12 @@ query GetEpisodes($where: RootQueryToEpisodeConnectionWhereArgs) {
   }
 }
 `
+
+interface FindEpisodesType {
+  episodes: {
+    nodes: WordpressEpisodeType[]
+  }
+}
 
 interface LoadEpisodeType {
   count: number
@@ -32,16 +39,13 @@ export const loadEpisodes = async ({
   sortBy?: any
   filterBy?: any
 }): Promise<LoadEpisodeType> => {
-  // Gets evey episode
-  const result = await wordpressClient({
-    query: findEpisodes,
+  // Get evey episode
+  const response = await wordpressClient.request<FindEpisodesType>(findEpisodes, {
     variables: { count, offset },
   });
 
-  console.log(result.errors)
-
   // Converts every episode from Wordpress Format to local type
-  const allEpisodes:EpisodeType[] = result.data.episodes.nodes.map((wordpressEpisode: WordpressEpisodeType) => parseEpisode(wordpressEpisode))
+  const allEpisodes:EpisodeType[] = response.episodes.nodes.map((wordpressEpisode: WordpressEpisodeType) => parseEpisode(wordpressEpisode))
 
   // Filter and sort these to the given parameters
   const matchingEpisodes = allEpisodes.filter(filterBy).sort(sortBy)
