@@ -5,8 +5,6 @@ import { PER_PAGE } from "@/constants"
 import { loadEpisodes } from "@/queries/episodes/loadEpisodes"
 import { unstable_cache } from "next/cache"
 
-export const revalidate = 3600
-
 export interface PageProps {
   params: {
     page?: string
@@ -18,7 +16,6 @@ const getCachedEpisodes = unstable_cache(
   ['episodes'],
   {
     tags: ["episode", "episodes"],
-    revalidate: 3600
   }
 );
 

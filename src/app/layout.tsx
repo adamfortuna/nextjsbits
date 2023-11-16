@@ -7,6 +7,8 @@ import Footer from "@/components/layout/Footer/Footer"
 const inter = Inter({ subsets: ['latin'] })
 const pixelSans = Pixelify_Sans({subsets: ['latin'], variable: '--font-pixel', display: 'swap', adjustFontFallback: false})
 
+export const revalidate = 3600
+
 export const metadata: Metadata = {
   title: 'Next.js Bits',
   description: 'Quick Next.js answers when you need them most.',
