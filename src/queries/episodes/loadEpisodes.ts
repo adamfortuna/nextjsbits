@@ -26,7 +26,6 @@ interface LoadEpisodeType {
   count: number
   episodes: EpisodeType[]
   totalPages: number
-  
 }
 export const loadEpisodes = async ({
   count = PER_PAGE,
