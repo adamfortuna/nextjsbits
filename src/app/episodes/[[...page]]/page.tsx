@@ -1,7 +1,7 @@
 import EpisodeCard from "@/components/Episode/EpisodeCard"
 import Pagination from "@/components/Episode/Pagination"
 import Container from "@/components/layout/Container"
-import { PER_PAGE } from "@/contants"
+import { PER_PAGE } from "@/constants"
 import { loadEpisodes } from "@/queries/episodes/loadEpisodes"
 
 export interface PageProps {

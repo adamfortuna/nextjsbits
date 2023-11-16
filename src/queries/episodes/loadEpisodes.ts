@@ -1,10 +1,11 @@
-import { gql } from "graphql-tag"
-import { getClient } from "@/lib/apollo/serverClient"
 import { EpisodeType, WordpressEpisodeType } from '@/types'
-import { PER_PAGE } from "@/contants"
-import { parseEpisode, sortByEpisodesNumberDesc } from "@/lib/wordpress/wordpressClient"
+import { PER_PAGE } from "@/constants"
+import { parseEpisode, sortByEpisodesNumberDesc } from "@/lib/wordpress/parser"
+import { wordpressClient } from "@/lib/wordpress/client"
+import EpisodeListFragment from "@/queries/fragments/EpisodeListFragment"
 
-export const findEpisodes = gql`
+export const findEpisodes = `
+${EpisodeListFragment}
 query GetEpisodes($where: RootQueryToEpisodeConnectionWhereArgs) {
   episodes(first: 1000, where: $where) {
     nodes {
@@ -32,13 +33,15 @@ export const loadEpisodes = async ({
   filterBy?: any
 }): Promise<LoadEpisodeType> => {
   // Gets evey episode
-  const result = await getClient().query({
+  const result = await wordpressClient({
     query: findEpisodes,
     variables: { count, offset },
   });
 
+  console.log(result.errors)
+
   // Converts every episode from Wordpress Format to local type
-  const allEpisodes = result.data.episodes.nodes.map((wordpressEpisode: WordpressEpisodeType) => parseEpisode(wordpressEpisode))
+  const allEpisodes:EpisodeType[] = result.data.episodes.nodes.map((wordpressEpisode: WordpressEpisodeType) => parseEpisode(wordpressEpisode))
 
   // Filter and sort these to the given parameters
   const matchingEpisodes = allEpisodes.filter(filterBy).sort(sortBy)
