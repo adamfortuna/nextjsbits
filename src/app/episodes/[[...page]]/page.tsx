@@ -30,7 +30,7 @@ interface FindEpisodesType {
 }
 
 // Testing to see if `fetch` directly in a page.tsx route will cause it to cache correctly
-export const loadEpisodes = async ({
+const loadEpisodes = async ({
   count = PER_PAGE,
   offset = 0,
   sortBy = sortByEpisodesNumberDesc,
