@@ -48,6 +48,9 @@ const loadEpisodes = async ({
       'Content-Type': 'application/json',
       Authorization: `Basic ${String(process.env.WP_NEXTBITS_TOKEN)}`,
     },
+    next: {
+      revalidate: 3600
+    },
     body: JSON.stringify({
       query: findEpisodes,
       variables: {
