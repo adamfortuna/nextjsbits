@@ -1,5 +1,6 @@
 import Container from "@/components/layout/Container";
 import { getPost } from "@/queries/posts/loadPost";
+import { getPosts } from "@/queries/posts/loadPosts";
 import { notFound } from "next/navigation";
 
 export interface PageProps {
@@ -26,4 +27,12 @@ export default async function SinglePostPage({ params: { slug } }: PageProps) {
       </main>
     </Container>
   )
+}
+
+export async function generateStaticParams() {
+  const { posts } = await getPosts({ offset: 0 });
+
+  return posts.map((post) => ({
+    slug: post.slug,
+  }))
 }
