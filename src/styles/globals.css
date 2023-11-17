@@ -123,3 +123,12 @@ a {
   margin: 0 auto;
   max-width: var(--max-width);
 }
+
+.callout {
+  font-size: 20px;
+  border-left: 4px solid pink;
+}
+.callout--warning {
+  font-size: 20px;
+  border-left: 4px solid yellow;
+}

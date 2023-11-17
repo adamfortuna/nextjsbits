@@ -1,4 +1,4 @@
-import { ArticleType, AuthorType, CommentType, EpisodeType, TagType, WebmentionType, WordPressCommentType, WordpressEpisodeType } from "@/types"
+import { ArticleType, AuthorType, CommentType, PostType, TagType, WebmentionType, WordPressCommentType, WordpressPostType } from "@/types"
 
 export const sortByDateDesc = (a1: ArticleType, a2: ArticleType) => {
   const a1d = new Date(a1.date).getTime()
@@ -9,11 +9,11 @@ export const sortByDateDesc = (a1: ArticleType, a2: ArticleType) => {
   return a1d < a2d ? 1 : -1
 }
 
-export const sortByEpisodesNumberDesc = (a1: EpisodeType, a2: EpisodeType) => {
-  if (a1.episodeNumber === a2.episodeNumber) {
+export const sortByLevelNumberDesc = (a1: PostType, a2: PostType) => {
+  if (a1.levelInformation.levelNumber === a2.levelInformation.levelNumber) {
     return 0
   }
-  return a1.episodeNumber < a2.episodeNumber ? 1 : -1
+  return a1.levelInformation.levelNumber < a2.levelInformation.levelNumber ? 1 : -1
 }
 
 export const parseTags = (tags: TagType[]) => {
@@ -93,24 +93,26 @@ const parseComments = (comments: WordPressCommentType[]) => {
     })
 }
 
-export const parseEpisode = (episode: WordpressEpisodeType): EpisodeType => {
-  const tags = episode.tags?.nodes ? parseTags(episode.tags.nodes) : undefined
+export const parsePost = (post: WordpressPostType): PostType => {
+  const tags = post.tags?.nodes ? parseTags(post.tags.nodes) : undefined
   const comments =
-    episode.comments && episode.comments.nodes && episode.comments.nodes.length > 0 ? parseComments(episode.comments.nodes) : null
+    post.comments && post.comments.nodes && post.comments.nodes.length > 0 ? parseComments(post.comments.nodes) : null
 
   return {
-    id: episode.id,
-    title: episode.title,
-    slug: episode.slug,
-    date: episode.date,
-    featuredImage: episode.featuredImage?.node ? episode.featuredImage?.node : null,
-    content: episode.content || null,
-    excerpt: episode.excerpt?.length > 0 ? episode.excerpt : null,
+    id: post.id,
+    title: post.title,
+    slug: post.slug,
+    date: new Date(post.date),
+    modifedDate: new Date(post.modified),
+    featuredImage: post.featuredImage?.node ? post.featuredImage?.node : null,
+    content: post.content || null,
+    excerpt: post.excerpt?.length > 0 ? post.excerpt : null,
     tags,
-    url: `${String(process.env.HOST)}/episode/1`,
-    commentCount: comments ? comments.length : episode.commentCount || null,
+    url: `/${post.slug}`,
+    commentCount: comments ? comments.length : post.commentCount || null,
     comments,
-    allowComments: episode.commentStatus === 'open',
-    allowPings: episode.pingStatus === 'open',
-  } as EpisodeType
+    allowComments: post.commentStatus === 'open',
+    allowPings: post.pingStatus === 'open',
+    levelInformation: post.levelInformation
+  } as PostType
 }

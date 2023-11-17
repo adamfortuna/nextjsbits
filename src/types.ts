@@ -82,14 +82,37 @@ export interface CommentType {
 }
 
 
+// Level Information - Wordpress
+
+// Level Information - Local
+interface ToolType extends ArticleType{
+  
+}
+type LevelToolType = {
+  tool: ToolType
+  version?: string
+  notes?: string
+}
+
+type LevelInformationType = {
+  levelNumber: number
+  tools: LevelToolType[]
+  youtubeVideo?: {
+    seconds?: number
+    title?: string
+    youtubeId: string
+  }
+}
+
 
 // Post - Wordpress
-export type WordpressPostTypeType = 'episode' | 'post' | 'page'
+export type WordpressPostTypeType = 'tool' | 'post' | 'page'
 export interface WordpressContentType {
   id: number
   slug: string
   title: string
   date: string
+  modified: string
   featuredImage?: WordpressImageNodeType
   content: string
   project?: string
@@ -107,13 +130,9 @@ export interface WordpressPostType extends WordpressContentType {
     nodes: TagType[]
   }
   excerpt: string
+  levelInformation: LevelInformationType
 }
-export interface WordpressEpisodeType extends WordpressContentType {
-  tags?: {
-    nodes: TagType[]
-  }
-  excerpt: string
-}
+
 
 
 // Post - Local
@@ -121,7 +140,8 @@ export interface ArticleType {
   id: number
   slug: string
   title: string
-  date: string
+  modifedDate: Date
+  date: Date
   url: string
   featuredImage?: WordpressImageType
   allowComments?: boolean
@@ -130,9 +150,9 @@ export interface ArticleType {
 
   content?: string
   excerpt?: string
-  tags?: TagType[]
+  tags: TagType[]
   comments?: CommentType[]
 }
-export interface EpisodeType extends ArticleType {
-  episodeNumber: number
+export interface PostType extends ArticleType {
+  levelInformation: LevelInformationType
 }

@@ -18,13 +18,13 @@ export default function Footer() {
         <nav>
           <ul className={list.inline}>
             <li>
-              <Link href="/about" className={styles.link}>About</Link>
+              <Link href="/" className={styles.link}>About</Link>
             </li>
             <li>
-              <Link href="/sponsor" className={styles.link}>Sponsor</Link>
+              <Link href="/" className={styles.link}>Sponsor</Link>
             </li>
             <li>
-              <Link href="/showcase" className={styles.link}>Showcase</Link>
+              <Link href="/" className={styles.link}>Showcase</Link>
             </li>
           </ul>
         </nav>

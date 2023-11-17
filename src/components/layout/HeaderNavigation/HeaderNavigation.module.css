@@ -24,10 +24,9 @@
 }
 
 .navLink {
-  font-family: var(--font-pixel);
-  font-size: 24px;
+  font-size: 20px;
   color: white;
-  padding: var(--space-2) var(--space-4);
+  padding: var(--space-2) var(--space-2);
   margin: 0 var(--space-2);
 }
 .title:hover, .navLink:hover {

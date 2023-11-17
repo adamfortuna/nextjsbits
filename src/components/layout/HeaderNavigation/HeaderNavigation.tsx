@@ -15,13 +15,13 @@ export default function HeaderNavigation() {
           <nav>
             <ul className={list.inline}>
               <li>
-                <Link href="/episodes" className={styles.navLink}>Episodes</Link>
+                <Link href="/levels" className={styles.navLink}>Levels</Link>
               </li>
               <li>
-                <Link href="/packages" className={styles.navLink}>Packages</Link>
+                <Link href="/" className={styles.navLink}>Toolbox</Link>
               </li>
               <li>
-                <Link href="/quests" className={styles.navLink}>Quests</Link>
+                <Link href="/" className={styles.navLink}>Quests</Link>
               </li>
             </ul>
             <button type="button" className={styles.search}>
