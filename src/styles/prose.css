@@ -1,0 +1,13 @@
+.prose {
+  font-size: 18px;
+  position: relative;
+}
+.prose p {
+  margin: var(--space-4) 0;
+}
+
+.prose figure, 
+.prose figure img {
+  max-width: 100%;
+  height: auto;
+}

@@ -1,3 +1,8 @@
+.wrapper {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+}
 /* Group of cards */
 .cards {
   display: flex;
@@ -37,4 +42,17 @@
   padding: 18px;
   overflow: hidden;
   border-top: 1px solid #dedede;
+}
+
+.sidebar {
+  width: 33%;
+  max-width: 300px
+}
+
+.content {
+  width: 66%;
+  flex-grow: 1;
+}
+.contentHeader {
+  font-size: 48px;
 }

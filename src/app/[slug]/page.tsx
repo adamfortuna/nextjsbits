@@ -1,4 +1,4 @@
-import Container from "@/components/layout/Container";
+import PostPage from "@/components/post/PostPage";
 import { getPost } from "@/queries/posts/loadPost";
 import { getPosts } from "@/queries/posts/loadPosts";
 import { notFound } from "next/navigation";
@@ -16,17 +16,7 @@ export default async function SinglePostPage({ params: { slug } }: PageProps) {
     notFound()
   }
 
-  return (
-    <Container>
-      <main>
-        <p>{post.title}</p>
-
-        <div dangerouslySetInnerHTML={{ __html: String(post.content)}}>
-
-        </div>
-      </main>
-    </Container>
-  )
+  return <PostPage post={post} />
 }
 
 export async function generateStaticParams() {
