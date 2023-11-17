@@ -20,9 +20,6 @@ export default function HeaderNavigation() {
               <li>
                 <Link href="/" className={styles.navLink}>Toolbox</Link>
               </li>
-              <li>
-                <Link href="/" className={styles.navLink}>Quests</Link>
-              </li>
             </ul>
             <button type="button" className={styles.search}>
               Search

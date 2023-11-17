@@ -20,6 +20,11 @@ fragment PostFragment on Post {
 
   levelInformation {
     levelNumber
+    repository
+    demos {
+      title
+      url
+    }
     tools {
       version
       tool {
@@ -32,6 +37,10 @@ fragment PostFragment on Post {
     }
     youtubeVideo {
       seconds
+    }
+    links {
+      title
+      url
     }
   }
 }

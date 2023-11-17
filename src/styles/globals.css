@@ -50,6 +50,8 @@
   --color-blue-dark: #0737bd;
 
   --color-secondary: #999;
+
+  --color-dotborder: #777
 }
 
 @media (prefers-color-scheme: dark) {
@@ -129,11 +131,6 @@ a {
   }
 }
 
-.callout {
-  font-size: 20px;
-  border-left: 4px solid pink;
-}
-.callout--warning {
-  font-size: 20px;
-  border-left: 4px solid yellow;
+.sr-only {
+  display: none;
 }

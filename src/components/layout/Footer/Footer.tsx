@@ -14,7 +14,7 @@ export default function Footer() {
         </a>
       </p>
       
-      <nav>
+      <nav style={{display: "none"}}>
         <nav>
           <ul className={list.inline}>
             <li>

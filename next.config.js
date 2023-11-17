@@ -1,4 +1,13 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+module.exports = {
+  env: {
+    ROOT_PATH: __dirname,
+  },
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ['@svgr/webpack'],
+    })
 
-module.exports = nextConfig
+    return config
+  },
+}

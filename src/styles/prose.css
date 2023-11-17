@@ -11,3 +11,13 @@
   max-width: 100%;
   height: auto;
 }
+
+
+.prose .callout {
+  font-size: 20px;
+  border-left: 4px solid pink;
+}
+.prose .callout--warning {
+  font-size: 20px;
+  border-left: 4px solid yellow;
+}

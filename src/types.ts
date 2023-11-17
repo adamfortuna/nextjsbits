@@ -88,15 +88,26 @@ export interface CommentType {
 interface ToolType extends ArticleType{
   
 }
-type LevelToolType = {
+export type LevelToolType = {
   tool: ToolType
   version?: string
   notes?: string
 }
 
+export type LevelLinkType = {
+  title: string
+  url: string
+}
+export type LevelDemoType = {
+  title: string
+  url: string
+}
 type LevelInformationType = {
   levelNumber: number
-  tools: LevelToolType[]
+  tools?: LevelToolType[]
+  links?: LevelLinkType[]
+  demos?: LevelDemoType[]
+  repository?: string
   youtubeVideo?: {
     seconds?: number
     title?: string

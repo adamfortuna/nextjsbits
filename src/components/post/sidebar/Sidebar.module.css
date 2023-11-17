@@ -1,0 +1,85 @@
+/* Sidebar */
+.sidebar {
+  width: 33%;
+  max-width: 300px;
+  padding-right: var(--space-8);
+}
+
+.info {
+  margin-bottom: var(--space-8);
+}
+.infoHeader {
+  color: #777;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  font-family: var(--font-pixel);
+  margin-bottom: var(--space-1);
+}
+
+/* Level number */
+.levelNumber {
+  text-align: right;
+}
+.levelIcon {
+  fill: #ccc;
+  width: 16px;
+}
+.levelNumber {
+  font-size: 48px;
+}
+
+/* Tools */
+.tool {
+  display: flex;
+  flex-direction: row;
+}
+.toolTitle {
+  font-size: 1.4rem;
+  text-underline-offset: 4px;
+  text-decoration: underline;
+}
+.toolTitle:hover {
+  text-decoration: none;
+}
+.toolSpacer {
+  flex-grow: 1;
+  border-bottom: 1px dotted var(--color-dotborder);
+}
+.toolVersion {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+}
+
+
+/* Links */
+.linkList {
+  list-style: none;
+}
+.linkWrapper {
+  list-style: none;
+  margin-bottom: var(--space-2);
+}
+.linkWrapper:last {
+  border-bottom: none;
+}
+.linkLink {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-2) var(--space-2);
+  border-radius: 4px;
+  border-bottom: 1px dashed var(--color-dotborder);
+}
+.linkLink:hover {
+  background-color: #fff;
+  color: black !important;
+}
+.linkFeatured {
+  background-color: var(--color-blue);
+}
+.linkUrl {
+  color: #777;
+  font-size: 12px;
+  font-family: var(--font-pixel);
+}
