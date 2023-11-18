@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${inter.className} ${pixelSans.variable}`}>
         <HeaderNavigation />
         {children}
-        {/* <Footer /> */}
+        <Footer />
         {process.env.NODE_ENV === "production" ? (
           <Script
             strategy="lazyOnload"

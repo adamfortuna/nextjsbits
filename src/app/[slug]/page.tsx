@@ -1,7 +1,7 @@
 import PostPage from "@/components/post/PostPage";
 import { getPost } from "@/queries/posts/loadPost";
 import { getPosts } from "@/queries/posts/loadPosts";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 export interface PageProps {
   params: {
@@ -10,7 +10,11 @@ export interface PageProps {
 }
 
 export default async function SinglePostPage({ params: { slug } }: PageProps) {
-  const post = await getPost(slug);
+  let post = await getPost(slug);
+
+  if (post && post?.slug !== slug) {
+    redirect(`/${post.slug}`)
+  }
 
   if(!post) {
     notFound()
