@@ -3,6 +3,10 @@
   flex-direction: row-reverse;
   width: 100%;
 }
+
+
+
+
 /* Group of cards */
 .cards {
   display: flex;
@@ -45,10 +49,17 @@
 }
 
 
+
+/* Post Content */
 .content {
   width: 66%;
   flex-grow: 1;
+  border: 1px solid #222;
+  padding: var(--space-4);
+  border-radius: 4px;
+  flex: 1;
 }
 .contentHeader {
-  font-size: 48px;
+  font-size: 42px;
+  widows: 3;
 }

@@ -42,6 +42,10 @@ fragment PostFragment on Post {
       title
       url
     }
+    tableOfContents {
+      anchor
+      title
+    }
   }
 }
 `

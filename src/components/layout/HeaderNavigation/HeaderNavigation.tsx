@@ -17,13 +17,13 @@ export default function HeaderNavigation() {
               <li>
                 <Link href="/levels" className={styles.navLink}>Levels</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/" className={styles.navLink}>Toolbox</Link>
-              </li>
+              </li> */}
             </ul>
-            <button type="button" className={styles.search}>
+            {/* <button type="button" className={styles.search}>
               Search
-            </button>
+            </button> */}
           </nav>
         </nav>
       </div>

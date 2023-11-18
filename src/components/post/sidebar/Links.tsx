@@ -1,6 +1,7 @@
 import { LevelLinkType, PostType } from "@/types";
 import styles from './Sidebar.module.css'
 import { extractHost } from "@/lib/wordpress/utils";
+import { LinkSolid } from "@/components/svgs/icons";
 
 function Link({link}:{link:LevelLinkType}) {
   const linkDomain = extractHost(link.url)
@@ -8,9 +9,12 @@ function Link({link}:{link:LevelLinkType}) {
   return (
     <li className={styles.linkWrapper}>
       <a className={styles.linkLink} href={link.url}>
-        <span className={styles.linkText}>{link.title}</span>
-        <span className={styles.linkUrl}>
-          {linkDomain}
+        <LinkSolid className={styles.linkIcon} />
+        <span className={styles.linkLinkText}>
+          <span className={styles.linkText}>{link.title}</span>
+          <span className={styles.linkUrl}>
+            {linkDomain}
+          </span>
         </span>
       </a>
     </li>

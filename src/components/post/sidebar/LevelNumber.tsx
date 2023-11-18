@@ -1,6 +1,6 @@
 import { PostType } from "@/types";
 import styles from './Sidebar.module.css'
-import { MushroomSharpSolid } from "@/components/svgs/icons";
+import { FlagSharpSolid } from "@/components/svgs/icons";
 
 
 export default function LevelNumber({post}:{post:PostType}) {
@@ -8,7 +8,7 @@ export default function LevelNumber({post}:{post:PostType}) {
 
   return (
     <aside className={styles.levelNumber}>
-      <MushroomSharpSolid className={styles.levelIcon} />
+      <FlagSharpSolid className={styles.levelIcon} />
       <span className={styles.levelNumberNumber}>{levelNumber}</span>
     </aside>
   )

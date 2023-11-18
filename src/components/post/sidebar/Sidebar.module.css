@@ -3,6 +3,8 @@
   width: 33%;
   max-width: 300px;
   padding-right: var(--space-8);
+  position: sticky;
+  top: 0px;
 }
 
 .info {
@@ -23,15 +25,26 @@
   text-align: right;
 }
 .levelIcon {
-  fill: #ccc;
-  width: 16px;
+  fill: #fff;
+  width: 14px;
 }
 .levelNumber {
   font-size: 48px;
 }
 
+
+/* Dates */
+.dateTitle {
+  font-size: 1rem;
+}
+.dateDate {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+}
+
+
 /* Tools */
-.tool {
+.date, .tool {
   display: flex;
   flex-direction: row;
 }
@@ -43,7 +56,7 @@
 .toolTitle:hover {
   text-decoration: none;
 }
-.toolSpacer {
+.toolSpacer, .dateSpacer {
   flex-grow: 1;
   border-bottom: 1px dotted var(--color-dotborder);
 }
@@ -64,9 +77,14 @@
 .linkWrapper:last {
   border-bottom: none;
 }
+.linkIcon {
+  fill: #ccc;
+  width: 16px;
+  margin-right: var(--space-2);
+}
 .linkLink {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: var(--space-2) var(--space-2);
   border-radius: 4px;
   border-bottom: 1px dashed var(--color-dotborder);
@@ -74,6 +92,11 @@
 .linkLink:hover {
   background-color: #fff;
   color: black !important;
+  fill: black !important;
+}
+.linkLinkText {
+  display: flex;
+  flex-direction: column;
 }
 .linkFeatured {
   background-color: var(--color-blue);
@@ -82,4 +105,27 @@
   color: #777;
   font-size: 12px;
   font-family: var(--font-pixel);
+}
+
+
+/* Table of Contents */
+.toc {
+  /* position: sticky; */
+  top: 10px;
+  padding-top: var(--space-4);
+}
+.tocLink {
+  display: flex;
+  padding: var(--space-2) var(--space-2);
+  border-radius: 4px;
+  border-bottom: 1px dashed var(--color-dotborder);
+  font-size: 16px;
+}
+.tocLink:hover {
+  background-color: #fff;
+  color: black !important;
+  fill: black !important;
+}
+.tocNumber {
+  padding-right: var(--space-2);
 }
