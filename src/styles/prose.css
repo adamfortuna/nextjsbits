@@ -16,15 +16,20 @@
 .prose .callout {
   font-size: 20px;
   border-left: 4px solid pink;
+  padding-left: var(--space-4);
 }
 .prose .callout--warning {
   font-size: 20px;
   border-left: 4px solid yellow;
+  padding-left: var(--space-4);
 }
 
-.prose code {
+.prose p > code {
   background-color: white;
   color: black;
   border-radius: 2px;
   padding: 0 var(--space-1);
+}
+.prose pre.wp-block-code {
+  border: 1px solid #555;
 }

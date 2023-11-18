@@ -7,8 +7,8 @@ import PostSidebar from "@/components/post/PostSidebar";
 export default function PostPage({post}:{post:PostType}) {
   return (
     <article className={`container ${styles.wrapper}`}>
-      <PostContent post={post} />
       <PostSidebar post={post} />
+      <PostContent post={post} />
     </article>
   )
 }

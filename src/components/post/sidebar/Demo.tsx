@@ -1,17 +1,21 @@
 import { LevelDemoType, LevelToolType, PostType } from "@/types";
 import styles from './Sidebar.module.css'
-import { extractHost } from "@/lib/wordpress/utils";
+import { extractDomain } from "@/lib/wordpress/utils";
+import { LinkSolid } from "@/components/svgs/icons";
 
 
 function Link({demo}:{demo:LevelDemoType}) {
-  const linkDomain = extractHost(demo.url)
+  const linkDomain = extractDomain(demo.url)
 
   return (
-    <li className={styles.Wrapper}>
-      <a className={`${styles.linkLink} ${styles.linkFeatured}`} href={demo.url}>
-        <span className={styles.linkText}>{demo.title}</span>
-        <span className={styles.linkUrl}>
-          {linkDomain}
+    <li className={styles.linkWrapper}>
+      <a className={`${styles.linkLink} ${styles.linkFeatured}`} href={demo.url} target="_blank">
+        <LinkSolid className={styles.linkIcon} />
+        <span className={styles.linkLinkText}>
+          <span className={styles.linkText}>{demo.title}</span>
+          <span className={`${styles.linkUrl} ${styles.linkUrlFeatured}`}>
+            {linkDomain}
+          </span>
         </span>
       </a>
     </li>

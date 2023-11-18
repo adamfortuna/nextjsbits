@@ -5,6 +5,32 @@ export function extractHost(url:string) {
     return null
   }
 }
+export function extractDomain(url:string) {
+  try {
+    const host = extractHost(url)
+    if(!host) {
+      return null
+    }
+    const urlParts = new URL(url).hostname.split('.')
+    return urlParts
+      .splice(urlParts.length-2, urlParts.length-1).join(".")
+  } catch {
+    return null
+  }
+}
+
+export function extractRepo(url:string) {
+  try {
+    const host = extractHost(url)
+    if(!host) {
+      return null
+    }
+    const urlParts = new URL(url).pathname.split('/')
+    return urlParts[urlParts.length-1]
+  } catch {
+    return null
+  }
+}
 
 export function daysBetweenDates(date1: Date, date2: Date | null) {
   if (!date2) {

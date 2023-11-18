@@ -106,12 +106,16 @@ export type LevelContents =  {
   anchor: string
   title: string
 }
+export type LevelRepositoryType = {
+  title: string
+  url: string
+}
 type LevelInformationType = {
   levelNumber: number
   tools?: LevelToolType[]
   links?: LevelLinkType[]
   demos?: LevelDemoType[]
-  repository?: string
+  repositories?: LevelRepositoryType[]
   tableOfContents: LevelContents[]
   youtubeVideo?: {
     seconds?: number

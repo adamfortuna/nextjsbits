@@ -20,7 +20,6 @@ fragment PostFragment on Post {
 
   levelInformation {
     levelNumber
-    repository
     demos {
       title
       url
@@ -39,6 +38,10 @@ fragment PostFragment on Post {
       seconds
     }
     links {
+      title
+      url
+    }
+    repositories {
       title
       url
     }
