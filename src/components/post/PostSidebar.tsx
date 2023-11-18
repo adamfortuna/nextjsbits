@@ -1,5 +1,5 @@
 import { PostType } from "@/types"
-import styles from './sidebar/Sidebar.module.css'
+import styles from '@/styles/modules/Sidebar.module.css'
 import Demo from "./sidebar/Demo"
 import Tools from "./sidebar/Tools"
 import Links from "./sidebar/Links"

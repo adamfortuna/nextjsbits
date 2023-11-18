@@ -1,5 +1,5 @@
 import { PostType } from "@/types";
-import styles from './Sidebar.module.css'
+import styles from '@/styles/modules/Sidebar.module.css'
 import { daysBetweenDates } from "@/lib/wordpress/utils";
 
 function SingleDate({date, title}:{date:Date, title: string}) {

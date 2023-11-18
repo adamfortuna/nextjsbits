@@ -1,7 +1,7 @@
 import Link from "next/link"
-import styles from './HeaderNavigation.module.css'
-import list from "@/styles/modules/list.module.css"
-import Container from "../Container"
+import styles from '@/styles/modules/HeaderNavigation.module.css'
+import utils from "@/styles/modules/utilities.module.css"
+import Container from "./Container"
 
 export default function HeaderNavigation() {
   return (
@@ -13,7 +13,7 @@ export default function HeaderNavigation() {
         
         <nav>
           <nav>
-            <ul className={list.inline}>
+            <ul className={utils.inline}>
               <li>
                 <Link href="/levels" className={styles.navLink}>Levels</Link>
               </li>

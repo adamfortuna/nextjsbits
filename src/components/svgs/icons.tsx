@@ -14,3 +14,9 @@ export const FlagSharpSolid = (props: any) => {
     <svg aria-hidden="true" {...props} fill="currentColor" viewBox="0 0 448 512"><path d="M64 32V0H0V32 64 368 480v32H64V480 352l64.3-16.1c41.1-10.3 84.6-5.5 122.5 13.4c44.2 22.1 95.5 24.8 141.7 7.4L448 336V16L393.6 43.2c-46.3 23.2-100.8 23.2-147.1 0c-35.1-17.6-75.4-22-113.5-12.5L64 48V32z"/></svg>
   )
 }
+
+export const TriangleSolid = (props: any) => {
+  return (
+    <svg aria-hidden="true" {...props} fill="currentColor" viewBox="0 0 512 512"><path d="M290.5 51.8C283.3 39.5 270.2 32 256 32s-27.3 7.5-34.5 19.8l-216 368c-7.3 12.4-7.3 27.7-.2 40.1S25.7 480 40 480H472c14.3 0 27.6-7.7 34.7-20.1s7-27.8-.2-40.1l-216-368z"/></svg>
+  )
+}

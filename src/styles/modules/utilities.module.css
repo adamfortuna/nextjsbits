@@ -1,3 +1,14 @@
 .flexGrow {
   flex-grow: 1;
 }
+.fontPixel {
+  font-family: var(--font-pixel);
+}
+
+.inline {
+  display: inline;
+}
+
+.inline li {
+  display: inline;
+}

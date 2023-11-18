@@ -1,6 +1,6 @@
 import { PostType } from "@/types";
 import Link from "next/link";
-import styles from './PostCard.module.css'
+import styles from '@/styles/modules/Posts.module.css'
 import utils from "@/styles/modules/utilities.module.css"
 
 

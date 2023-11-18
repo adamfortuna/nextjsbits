@@ -1,5 +1,5 @@
-import { LevelDemoType, LevelToolType, PostType } from "@/types";
-import styles from './Sidebar.module.css'
+import { LevelDemoType, PostType } from "@/types";
+import styles from '@/styles/modules/Sidebar.module.css'
 import { extractDomain } from "@/lib/wordpress/utils";
 import { LinkSolid } from "@/components/svgs/icons";
 

@@ -1,5 +1,5 @@
 import { LevelToolType, PostType } from "@/types";
-import styles from './Sidebar.module.css'
+import styles from '@/styles/modules/Sidebar.module.css'
 import Link from "next/link";
 
 function Tool({tool}:{tool:LevelToolType}) {

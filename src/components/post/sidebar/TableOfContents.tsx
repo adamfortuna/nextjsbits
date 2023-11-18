@@ -1,5 +1,5 @@
 import { LevelContents, PostType } from "@/types";
-import styles from './Sidebar.module.css'
+import styles from '@/styles/modules/Sidebar.module.css'
 
 function Content({content, index}:{index:number, content:LevelContents}) {
 

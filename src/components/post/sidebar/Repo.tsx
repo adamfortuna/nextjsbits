@@ -1,6 +1,6 @@
 
 import { LevelRepositoryType, PostType } from "@/types";
-import styles from './Sidebar.module.css'
+import styles from '@/styles/modules/Sidebar.module.css'
 import { extractRepo } from "@/lib/wordpress/utils";
 import { LinkSolid } from "@/components/svgs/icons";
 

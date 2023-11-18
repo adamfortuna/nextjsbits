@@ -1,0 +1,80 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+@media (min-width: 768px) {
+  .main {
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+
+.header, .heroImage {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .header, .heroImage {
+    width: 50%;
+    height: auto;
+  }
+}
+
+.header {
+  align-self: center;
+}
+.header h1 {
+  font-size: 3rem;
+  line-height: 2.8rem;
+}
+.header h1 span {
+  font-family: var(--font-pixel);
+}
+
+.header p {
+  margin-top: var(--space-4);
+  color: var(--color-secondary);
+}
+
+
+/* Select level, tool */
+.select {
+  list-style: none;
+  margin-top: var(--space-8);
+}
+.select li {
+  list-style: none;
+  margin-bottom: var(--space-2);
+}
+.select li a {
+  font-family: var(--font-pixel);
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+}
+.select li a svg {
+  visibility: hidden;
+  margin-right: var(--space-2);
+  height: 18px;
+  width: 18px;
+  transform: rotate(90deg);
+  margin-right: var(--space-2);
+}
+
+/* Show the current one on hover */
+.select li:first-child,
+.select li a:hover {
+  color: lightgreen;
+}
+.select li:first-child a svg,
+.select li a:hover svg {
+  visibility: visible;
+}
+.select:hover li:first-child a:not(:hover) {
+  color: white;
+}
+.select:hover li:first-child a:not(:hover) svg {
+  visibility: hidden;
+}

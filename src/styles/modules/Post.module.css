@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+}
+
+/* Post Content */
+.content {
+  width: 100%;
+  flex-grow: 1;
+  padding: var(--space-4);
+}
+@media (min-width: var(--min-width-lg)) {
+  .content {
+    border-radius: 4px;
+    border: 1px solid #333;
+  }
+}
+.contentHeader {
+  font-size: 42px;
+  widows: 3;
+}

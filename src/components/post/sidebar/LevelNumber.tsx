@@ -1,5 +1,5 @@
 import { PostType } from "@/types";
-import styles from './Sidebar.module.css'
+import styles from '@/styles/modules/Sidebar.module.css'
 import { FlagSharpSolid } from "@/components/svgs/icons";
 
 

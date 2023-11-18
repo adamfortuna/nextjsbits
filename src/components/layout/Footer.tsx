@@ -1,8 +1,8 @@
 import Link from "next/link"
-import list from "@/styles/modules/list.module.css"
+import utils from "@/styles/modules/utilities.module.css"
 import text from "@/styles/modules/text.module.css"
-import styles from "./Footer.module.css";
-import Container from "../Container"
+import styles from "@/styles/modules/text.module.css"
+import Container from "./Container"
 
 export default function Footer() {
   return (
@@ -16,7 +16,7 @@ export default function Footer() {
       
       <nav style={{display: "none"}}>
         <nav>
-          <ul className={list.inline}>
+          <ul className={utils.inline}>
             <li>
               <Link href="/" className={styles.link}>About</Link>
             </li>
