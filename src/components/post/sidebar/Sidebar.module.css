@@ -110,8 +110,9 @@
 
 /* Table of Contents */
 .toc {
-  /* position: sticky; */
-  top: 10px;
+  position: -webkit-sticky;
+	position: sticky;
+  top: var(--space-8);
   padding-top: var(--space-4);
 }
 .tocLink {
