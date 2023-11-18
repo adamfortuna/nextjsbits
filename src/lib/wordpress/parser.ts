@@ -132,6 +132,7 @@ export const parsePost = (post: WordpressPostType): PostType => {
 export const parseTool = (tool: WordpressToolType): ToolType => {
   const content = parseContent(tool)
   const tags = tool.tags?.nodes ? parseTags(tool.tags.nodes) : undefined
+  const levels = tool.toolInformation.levels ? tool.toolInformation.levels.map((t) => parsePost(t) ) : []
 
   return {
     ...content,
@@ -140,5 +141,6 @@ export const parseTool = (tool: WordpressToolType): ToolType => {
     url: `/tools/${tool.slug}`,
     toolInformation: tool.toolInformation,
     levelsCount: tool.toolInformation.levels ? tool.toolInformation.levels.length : null,
+    levels
   } as ToolType
 }

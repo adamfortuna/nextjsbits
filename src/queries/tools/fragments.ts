@@ -16,3 +16,23 @@ fragment ToolListFragment on Tool {
   }
 }
 `
+
+
+export const ToolFragment = `
+fragment ToolFragment on Tool {
+  id: databaseId
+  title
+  slug
+  toolInformation {
+    homepage
+    language
+    npmUrl
+    repository
+    levels {
+      ... on Post {
+        ...PostListFragment
+      }
+    }
+  }
+}
+`

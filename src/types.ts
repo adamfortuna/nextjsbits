@@ -191,5 +191,6 @@ export interface PostType extends ArticleType {
 }
 export interface ToolType extends ArticleType {
   levelsCount: number
+  levels: PostType[]
   toolInformation: ToolInformationType
 }
