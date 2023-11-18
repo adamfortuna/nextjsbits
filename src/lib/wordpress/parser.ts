@@ -1,4 +1,4 @@
-import { ArticleType, AuthorType, CommentType, PostType, TagType, WebmentionType, WordPressCommentType, WordpressPostType } from "@/types"
+import { ArticleType, AuthorType, CommentType, PostType, TagType, ToolType, WebmentionType, WordPressCommentType, WordpressContentType, WordpressPostType, WordpressToolType } from "@/types"
 
 export const sortByDateDesc = (a1: ArticleType, a2: ArticleType) => {
   const a1d = new Date(a1.date).getTime()
@@ -15,6 +15,11 @@ export const sortByLevelNumberDesc = (a1: PostType, a2: PostType) => {
   }
   return a1.levelInformation.levelNumber < a2.levelInformation.levelNumber ? 1 : -1
 }
+
+export const sortByTitleAsc = (a1: ArticleType, a2: ArticleType) => {
+  return a1.title.toLocaleLowerCase() < a2.title.toLocaleLowerCase() ? -1 : 1
+}
+
 
 export const parseTags = (tags: TagType[]) => {
   return tags.map((t) => {
@@ -93,26 +98,47 @@ const parseComments = (comments: WordPressCommentType[]) => {
     })
 }
 
-export const parsePost = (post: WordpressPostType): PostType => {
-  const tags = post.tags?.nodes ? parseTags(post.tags.nodes) : undefined
+export const parseContent = (content: WordpressContentType): ArticleType => {
   const comments =
-    post.comments && post.comments.nodes && post.comments.nodes.length > 0 ? parseComments(post.comments.nodes) : null
+  content.comments && content.comments.nodes && content.comments.nodes.length > 0 ? parseComments(content.comments.nodes) : null
+  return {
+    id: content.id,
+    title: content.title,
+    slug: content.slug,
+    date: new Date(content.date),
+    modifedDate: new Date(content.modified),
+    featuredImage: content.featuredImage?.node ? content.featuredImage?.node : null,
+    content: content.content || null,
+    commentCount: comments ? comments.length : content.commentCount || null,
+    comments,
+    allowComments: content.commentStatus === 'open',
+    allowPings: content.pingStatus === 'open',
+  } as PostType
+}
+
+export const parsePost = (post: WordpressPostType): PostType => {
+  const content = parseContent(post)
+  const tags = post.tags?.nodes ? parseTags(post.tags.nodes) : undefined
 
   return {
-    id: post.id,
-    title: post.title,
-    slug: post.slug,
-    date: new Date(post.date),
-    modifedDate: new Date(post.modified),
-    featuredImage: post.featuredImage?.node ? post.featuredImage?.node : null,
-    content: post.content || null,
+    ...content,
     excerpt: post.excerpt?.length > 0 ? post.excerpt : null,
     tags,
     url: `/${post.slug}`,
-    commentCount: comments ? comments.length : post.commentCount || null,
-    comments,
-    allowComments: post.commentStatus === 'open',
-    allowPings: post.pingStatus === 'open',
     levelInformation: post.levelInformation
   } as PostType
+}
+
+export const parseTool = (tool: WordpressToolType): ToolType => {
+  const content = parseContent(tool)
+  const tags = tool.tags?.nodes ? parseTags(tool.tags.nodes) : undefined
+
+  return {
+    ...content,
+    excerpt: tool.excerpt?.length > 0 ? tool.excerpt : null,
+    tags,
+    url: `/tools/${tool.slug}`,
+    toolInformation: tool.toolInformation,
+    levelsCount: tool.toolInformation.levels ? tool.toolInformation.levels.length : null,
+  } as ToolType
 }

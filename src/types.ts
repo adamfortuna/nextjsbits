@@ -85,9 +85,6 @@ export interface CommentType {
 // Level Information - Wordpress
 
 // Level Information - Local
-interface ToolType extends ArticleType{
-  
-}
 export type LevelToolType = {
   tool: ToolType
   version?: string
@@ -125,6 +122,15 @@ type LevelInformationType = {
 }
 
 
+type ToolInformationType = {
+  homepage?: string
+  language?: string
+  npmUrl?: string
+  repository?: string
+  levels?: WordpressPostType[]
+}
+
+
 // Post - Wordpress
 export type WordpressPostTypeType = 'tool' | 'post' | 'page'
 export interface WordpressContentType {
@@ -152,6 +158,13 @@ export interface WordpressPostType extends WordpressContentType {
   excerpt: string
   levelInformation: LevelInformationType
 }
+export interface WordpressToolType extends WordpressContentType {
+  tags?: {
+    nodes: TagType[]
+  }
+  excerpt: string
+  toolInformation: ToolInformationType
+}
 
 
 
@@ -175,4 +188,8 @@ export interface ArticleType {
 }
 export interface PostType extends ArticleType {
   levelInformation: LevelInformationType
+}
+export interface ToolType extends ArticleType {
+  levelsCount: number
+  toolInformation: ToolInformationType
 }
