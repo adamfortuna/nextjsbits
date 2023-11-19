@@ -4,7 +4,6 @@ import { PER_PAGE } from "@/constants"
 import { parsePost, sortByLevelNumberDesc } from "@/lib/wordpress/parser"
 import { wordpressClient } from "@/lib/wordpress/client"
 import { PostListFragment } from "./fragments"
-import { unstable_cache } from "next/cache"
 
 export const findPosts = gql`
 ${PostListFragment}
@@ -61,19 +60,6 @@ export const loadPosts = async ({
   }
 }
 
-
-export const getCachedPosts = unstable_cache(
-  async (params: loadPostsType) => loadPosts(params),
-  ["getCachedPosts"],
-  {
-    tags: ["posts"],
-  }
-);
-
-export const getPosts = (params: loadPostsType) => {
-  if (Boolean(process.env.USE_CACHE)) {
-    return getCachedPosts(params)
-  } else {
-    return loadPosts(params)
-  }
+export const getPosts = (params: loadPostsType): Promise<LoadPostType> => {
+  return loadPosts(params)
 }

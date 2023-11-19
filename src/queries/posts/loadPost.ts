@@ -3,7 +3,6 @@ import { PostType, WordpressPostType } from '@/types'
 import { parsePost } from "@/lib/wordpress/parser"
 import { wordpressClient } from "@/lib/wordpress/client"
 import { PostFragment } from "./fragments"
-import { unstable_cache } from "next/cache"
 import { getPosts } from "./loadPosts"
 
 export const findPost = gql`
@@ -41,18 +40,6 @@ export const loadPost = async (slug: string): Promise<PostType | null> => {
 }
 
 
-export const getCachedPost = unstable_cache(
-  async (slug: string) => loadPost(slug),
-  ["getCachedPost"],
-  {
-    tags: ["posts"],
-  }
-);
-
 export const getPost = (slug: string) => {
-  if (Boolean(process.env.USE_CACHE)) {
-    return getCachedPost(slug)
-  } else {
-    return loadPost(slug)
-  }
+  return loadPost(slug)
 }

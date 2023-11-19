@@ -3,7 +3,6 @@ import { ToolType, WordpressToolType } from '@/types'
 import { parseTool } from "@/lib/wordpress/parser"
 import { wordpressClient } from "@/lib/wordpress/client"
 import { ToolFragment } from "./fragments"
-import { unstable_cache } from "next/cache"
 import { PostListFragment } from "../posts/fragments"
 
 export const findTool = gql`
@@ -27,19 +26,6 @@ export const loadTool = async (slug: string): Promise<ToolType | null> => {
   return response.tool ? parseTool(response.tool) : null
 }
 
-
-export const getCachedTool = unstable_cache(
-  async (slug: string) => loadTool(slug),
-  ["getCachedTool"],
-  {
-    tags: ["tools"],
-  }
-);
-
 export const getTool = (slug: string) => {
-  if (Boolean(process.env.USE_CACHE)) {
-    return getCachedTool(slug)
-  } else {
-    return loadTool(slug)
-  }
+  return loadTool(slug)
 }

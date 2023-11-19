@@ -2,7 +2,6 @@ import { gql } from 'graphql-request'
 import { ToolType, WordpressToolType } from '@/types'
 import { parseTool, sortByTitleAsc } from "@/lib/wordpress/parser"
 import { wordpressClient } from "@/lib/wordpress/client"
-import { unstable_cache } from "next/cache"
 import { ToolListFragment } from "./fragments"
 
 export const findTools = gql`
@@ -60,19 +59,6 @@ export const loadTools = async ({
   }
 }
 
-
-export const getCachedTools = unstable_cache(
-  async (params?: LoadToolType) => loadTools(params || {}),
-  ["getCachedTools"],
-  {
-    tags: ["tools"],
-  }
-);
-
 export const getTools = (params?: LoadToolType) => {
-  if (Boolean(process.env.USE_CACHE)) {
-    return getCachedTools(params)
-  } else {
-    return loadTools(params || {})
-  }
+  return loadTools(params || {})
 }
