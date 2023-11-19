@@ -3,6 +3,8 @@ import { getPost } from "@/queries/posts/loadPost";
 import { getPosts } from "@/queries/posts/loadPosts";
 import { notFound, redirect } from "next/navigation";
 
+export const revalidate = 3600
+
 export interface PageProps {
   params: {
     slug: string

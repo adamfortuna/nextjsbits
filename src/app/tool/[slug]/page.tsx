@@ -3,6 +3,8 @@ import { getTool } from "@/queries/tools/loadTool";
 import { getTools } from "@/queries/tools/loadTools";
 import { notFound } from "next/navigation";
 
+export const revalidate = 3600
+
 export interface PageProps {
   params: {
     slug: string
