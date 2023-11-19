@@ -10,7 +10,7 @@ export interface PageProps {
 }
 
 export default async function SingleToolPage({ params: { slug } }: PageProps) {
-  let tool = await getTool(slug);
+  let tool = await getTool(slug)
 
   if(!tool) {
     notFound()
