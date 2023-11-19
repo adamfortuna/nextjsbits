@@ -26,7 +26,7 @@ export default function Dates({post}:{post:PostType}) {
     <aside className={styles.info}>
       <h3 className={styles.infoHeader}>Dates</h3>
       <SingleDate date={date} title="Written" />
-      {showModified ? (
+      {modifedDate && showModified ? (
         <SingleDate date={modifedDate} title="Updated" />
       ) : false}
     </aside>
