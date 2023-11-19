@@ -33,18 +33,22 @@ export function extractRepo(url:string) {
 }
 
 export function daysBetweenDates(date1: Date | null, date2: Date | null) {
-  if (!date1 || !date2) {
+  try {
+    if (!date1 || !date2) {
+      return false;
+    }
+    // Convert both dates to milliseconds
+    var date1Ms = date1.getTime();
+    var date2Ms = date2.getTime();
+    
+    // Calculate the difference in milliseconds
+    var timeDifference = date2Ms - date1Ms;
+    
+    // Convert the time difference to days
+    var daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    
+    return daysDifference;
+  } catch {
     return false;
   }
-  // Convert both dates to milliseconds
-  var date1Ms = date1.getTime();
-  var date2Ms = date2.getTime();
-
-  // Calculate the difference in milliseconds
-  var timeDifference = date2Ms - date1Ms;
-
-  // Convert the time difference to days
-  var daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-
-  return daysDifference;
 }
