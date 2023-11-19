@@ -1,13 +1,11 @@
 import Link from "next/link"
 import utils from "@/styles/modules/utilities.module.css"
-import text from "@/styles/modules/text.module.css"
-import styles from "@/styles/modules/text.module.css"
 import Container from "./Container"
 
 export default function Footer() {
   return (
-    <Container className={styles.footer}>
-      <p className={text.secondary}>
+    <Container>
+      <p className={utils.secondary}>
         Made with ♥️ by{' '}
         <a href="https://adamfortuna.com" target="_blank">
           Adam Fortuna.
@@ -18,13 +16,13 @@ export default function Footer() {
         <nav>
           <ul className={utils.inline}>
             <li>
-              <Link href="/" className={styles.link}>About</Link>
+              <Link href="/">About</Link>
             </li>
             <li>
-              <Link href="/" className={styles.link}>Sponsor</Link>
+              <Link href="/">Sponsor</Link>
             </li>
             <li>
-              <Link href="/" className={styles.link}>Showcase</Link>
+              <Link href="/">Showcase</Link>
             </li>
           </ul>
         </nav>

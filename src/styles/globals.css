@@ -24,7 +24,9 @@
   /* Light Mode */
   --color-text: 0, 0, 0;
   --color-background: 255, 255, 255;
-  --color-background-900: #e2e8f0;
+  --color-background-800: #e2e8f0;
+  --color-background-900: #f1f5f9;
+  --color-background-950: #f8fafc;
   
   --color-dotborder: #777;
   --color-featured: #57ff5d;
@@ -40,7 +42,10 @@
     /* Dark Mode */
     --color-text: 255, 255, 255;
     --color-background: 0, 0, 0;
-    --color-background-900: #1e293b;
+    
+    --color-background-800: #1e293b;
+    --color-background-900: #0f172a;
+    --color-background-950: #020617;
 
     --color-dotborder: #777;
     --color-featured: #57ff5d;

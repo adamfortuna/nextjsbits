@@ -9,16 +9,17 @@
 }
 @media (min-width: 768px) {
   .levels {
-    width: 66.66%;
+    width: 75%;
   }
 }
 .filter {
   width: 100%;
+  border: 1px solid var(--color-background-800);
 }
 @media (min-width: 768px) {
   .filter {
-    width: 33.33%;
-    min-width: 300px;
+    width: 25%;
+    min-width: 200px;
   }
 }
 
@@ -26,8 +27,10 @@
 
 /* Group of cards */
 .cards {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-right: var(--space-8);
 }
 
 
@@ -36,16 +39,6 @@
   display: flex;
   width: 100%;
 }
-@media (min-width: 768px) {
-  .card {
-    width: 50%;
-  }
-}
-@media (min-width: 1024px) {
-  .card {
-    width: 33.33%;
-  }
-}
 
 .cardInner {
   display: flex;
@@ -53,13 +46,73 @@
   width: 100%;
   border-radius: 4px;
   margin: var(--space-2);
-  padding: var(--space-4);
-  background-color: #111;
+  border: 1px solid var(--color-background-800);
 }
 
-.card .footer {
-  padding: 18px;
+.level, .main, .footer {
+  padding-left: var(--space-2);
+  padding-right: var(--space-2);
+}
+
+
+.level {
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
+}
+.level svg {
+  width: 12px;
+  color: var(--color-featured);
+}
+.level span {
+  margin-left: var(--space-1);
+  font-size: var(--text-xl);
+  font-family: var(--font-mono);
+}
+
+.main {
+  flex-grow: 1;
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-4);
+}
+
+/* Main Link */
+.link {
+  font-size: var(--text-lg);
+  text-underline-offset: 4px;
+  text-decoration: underline;
+}
+.link:hover {
+  color: var(--color-highlight);
+}
+
+.excerpt {
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-2);
+  font-size: var(--text-base);
+  line-height: var(--line-height-base);
+  color: var(--color-secondary);
+}
+
+/* Tags */
+.tags {
+  display: inline;
+  list-style: none;
+  margin-top: var(--space-4);
+}
+.tags li {
+  display: inline;
+  padding-right: var(--space-2);
+  color: var(--color-secondary);
+  font-size: var(--text-base);
+}
+
+.footer {
   overflow: hidden;
-  border-top: 1px solid #dedede;
+  border-top: 1px dashed var(--color-background-800);
+  text-align: right;
+  color: var(--color-secondary);
+  font-size: var(--text-sm);
+  padding-top: var(--space-2);
+  padding-bottom: var(--space-2);
 }
 

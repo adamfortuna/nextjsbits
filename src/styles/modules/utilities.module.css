@@ -12,3 +12,11 @@
 .inline li {
   display: inline;
 }
+
+.secondary {
+  color: var(--color-secondary);
+  font-size: var(--text-md);
+}
+a.secondary:hover {
+  text-decoration: underline;
+}

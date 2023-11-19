@@ -29,6 +29,7 @@
 .levelNumber {
   text-align: right;
   font-size: var(--text-2xl);
+  font-family: var(--font-mono);
 }
 .levelNumber svg {
   width: 14px;
@@ -91,7 +92,7 @@
   border-top-color: transparent;
 }
 .link:hover {
-  background-color: var(--color-background-900);
+  background-color: var(--color-background-800);
   color: var(--color-highlight) !important;
   border-left-color: var(--color-dotborder);
   border-right-color: var(--color-dotborder);
@@ -137,7 +138,7 @@
   font-size: var(--text-md);
 }
 .tocLink:hover {
-  background-color: var(--color-background-900);
+  background-color: var(--color-background-800);
   color: var(--color-highlight) !important;
   border-left-color: var(--color-dotborder);
   border-right-color: var(--color-dotborder);

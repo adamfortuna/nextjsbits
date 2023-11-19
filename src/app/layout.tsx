@@ -24,7 +24,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} ${pixelSans.variable}`}>
         <HeaderNavigation />
-        {children}
+        <div style={{minHeight: "100vh"}}>
+          {children}
+        </div>
         <Footer />
         {process.env.NODE_ENV === "production" ? (
           <Script
