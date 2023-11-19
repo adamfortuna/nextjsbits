@@ -64,7 +64,7 @@ export const loadPosts = async ({
 
 export const getCachedPosts = unstable_cache(
   async (params: loadPostsType) => loadPosts(params),
-  ["posts"],
+  ["getCachedPosts"],
   {
     tags: ["posts"],
   }

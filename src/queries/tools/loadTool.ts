@@ -30,7 +30,7 @@ export const loadTool = async (slug: string): Promise<ToolType | null> => {
 
 export const getCachedTool = unstable_cache(
   async (slug: string) => loadTool(slug),
-  ["tools"],
+  ["getCachedTool"],
   {
     tags: ["tools"],
   }

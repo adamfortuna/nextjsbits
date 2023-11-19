@@ -1,7 +1,6 @@
 import Container from "@/components/layout/Container"
 import Image from "next/image"
 import styles from "@/styles/modules/home.module.css"
-import utils from "@/styles/modules/utilities.module.css";
 import Link from "next/link";
 import { TriangleSolid } from "@/components/svgs/icons";
 

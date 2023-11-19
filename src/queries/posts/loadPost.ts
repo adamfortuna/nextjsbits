@@ -43,7 +43,7 @@ export const loadPost = async (slug: string): Promise<PostType | null> => {
 
 export const getCachedPost = unstable_cache(
   async (slug: string) => loadPost(slug),
-  ["posts"],
+  ["getCachedPost"],
   {
     tags: ["posts"],
   }

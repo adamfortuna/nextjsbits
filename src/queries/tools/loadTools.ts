@@ -63,7 +63,7 @@ export const loadTools = async ({
 
 export const getCachedTools = unstable_cache(
   async (params?: LoadToolType) => loadTools(params || {}),
-  ["tools"],
+  ["getCachedTools"],
   {
     tags: ["tools"],
   }
