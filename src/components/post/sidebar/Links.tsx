@@ -8,11 +8,11 @@ function Link({link}:{link:LevelLinkType}) {
 
   return (
     <li className={styles.linkWrapper}>
-      <a className={styles.linkLink} href={link.url}>
-        <LinkSolid className={styles.linkIcon} />
-        <span className={styles.linkLinkText}>
-          <span className={styles.linkText}>{link.title}</span>
-          <span className={styles.linkUrl}>
+      <a className={styles.link} href={link.url}>
+        <LinkSolid  />
+        <span>
+          <span className="text">{link.title}</span>
+          <span className="url">
             {linkDomain}
           </span>
         </span>

@@ -8,8 +8,8 @@ export default function LevelNumber({post}:{post:PostType}) {
 
   return (
     <aside className={styles.levelNumber}>
-      <FlagSharpSolid className={styles.levelIcon} />
-      <span className={styles.levelNumberNumber}>{levelNumber}</span>
+      <FlagSharpSolid />
+      <span>{levelNumber}</span>
     </aside>
   )
 }

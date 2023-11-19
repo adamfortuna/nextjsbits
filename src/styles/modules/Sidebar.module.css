@@ -15,11 +15,11 @@
 .info {
   margin-bottom: var(--space-8);
 }
-.infoHeader {
-  color: #777;
+.info h3 {
+  color: var(--color-secondary);
   text-transform: uppercase;
   font-weight: normal;
-  font-size: 12px;
+  font-size: var(--text-sm);
   letter-spacing: 0.1em;
   font-family: var(--font-pixel);
   margin-bottom: var(--space-1);
@@ -28,23 +28,21 @@
 /* Level number */
 .levelNumber {
   text-align: right;
+  font-size: var(--text-2xl);
 }
-.levelIcon {
-  fill: #fff;
+.levelNumber svg {
   width: 14px;
-}
-.levelNumber {
-  font-size: 48px;
+  color: var(--color-featured);
 }
 
 
 /* Dates */
 .dateTitle {
-  font-size: 1rem;
+  font-size: var(--text-lg);
 }
 .dateDate {
   font-family: var(--font-mono);
-  font-size: 1rem;
+  font-size: var(--text-lg);
 }
 
 
@@ -52,15 +50,15 @@
 .date, .tool {
   display: flex;
   flex-direction: row;
-  margin-bottom: var(--space-1);
+  margin-bottom: var(--space-2);
 }
 .toolTitle {
-  font-size: 1.4rem;
+  font-size: var(--text-lg);
   text-underline-offset: 4px;
   text-decoration: underline;
 }
 .toolTitle:hover {
-  text-decoration: none;
+  color: var(--color-highlight);
 }
 .toolSpacer, .dateSpacer {
   flex-grow: 1;
@@ -68,7 +66,7 @@
 }
 .toolVersion {
   font-family: var(--font-mono);
-  font-size: 1.4rem;
+  font-size: var(--text-lg);
 }
 
 
@@ -80,40 +78,44 @@
   list-style: none;
   margin-bottom: var(--space-2);
 }
-.linkWrapper:last {
-  border-bottom: none;
-}
-.linkIcon {
-  fill: #ccc;
-  width: 16px;
-  margin-right: var(--space-2);
-}
-.linkLink {
+
+/* Single Links */
+.link {
   display: flex;
   flex-direction: row;
   padding: var(--space-2) var(--space-2);
   border-radius: 4px;
-  border-bottom: 1px dashed var(--color-dotborder);
+  border: 1px dashed var(--color-dotborder);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
 }
-.linkLink:hover {
-  background-color: #fff;
-  color: black !important;
-  fill: black !important;
+.link:hover {
+  background-color: var(--color-background-900);
+  color: var(--color-highlight) !important;
+  border-left-color: var(--color-dotborder);
+  border-right-color: var(--color-dotborder);
+  border-top-color: var(--color-dotborder);
 }
-.linkLinkText {
-  display: flex;
-  flex-direction: column;
+.link svg {
+  width: 20px;
+  flex: none;
+  margin-right: var(--space-2);
 }
-.linkFeatured {
-  background-color: var(--color-blue);
+.link > span span {
+  display: block;
 }
-.linkUrl {
-  color: #777;
-  font-size: 12px;
+.link > span span:last-child {
+  color: var(--color-secondary);
+  font-size: var(--text-sm);
   font-family: var(--font-pixel);
 }
-.linkUrlFeatured {
-  color: #ccc;
+
+.linkFeatured {
+  border: 1px dashed var(--color-featured);
+}
+.linkFeatured:hover {
+  border: 1px dashed var(--color-featured) !important;
 }
 
 
@@ -128,14 +130,19 @@
   display: flex;
   padding: var(--space-2) var(--space-2);
   border-radius: 4px;
-  border-bottom: 1px dashed var(--color-dotborder);
-  font-size: 16px;
+  border: 1px dashed var(--color-dotborder);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  font-size: var(--text-md);
 }
 .tocLink:hover {
-  background-color: #fff;
-  color: black !important;
-  fill: black !important;
+  background-color: var(--color-background-900);
+  color: var(--color-highlight) !important;
+  border-left-color: var(--color-dotborder);
+  border-right-color: var(--color-dotborder);
+  border-top-color: var(--color-dotborder);
 }
-.tocNumber {
+.tocLink > span:first-child {
   padding-right: var(--space-2);
 }

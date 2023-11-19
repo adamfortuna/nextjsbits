@@ -2,20 +2,18 @@
 import { LevelRepositoryType, PostType } from "@/types";
 import styles from '@/styles/modules/Sidebar.module.css'
 import { extractRepo } from "@/lib/wordpress/utils";
-import { LinkSolid } from "@/components/svgs/icons";
+import { GitHubIcon } from "@/components/svgs/icons";
 
 function Repository({repository}:{repository:LevelRepositoryType}) {
   const repoPair = extractRepo(repository.url)
 
   return (
     <li className={styles.linkWrapper}>
-      <a className={styles.linkLink} href={repository.url}>
-        <LinkSolid className={styles.linkIcon} />
-        <span className={styles.linkLinkText}>
-          <span className={styles.linkText}>{repository.title}</span>
-          <span className={styles.linkUrl}>
-            {repoPair}
-          </span>
+      <a className={styles.link} href={repository.url}>
+        <GitHubIcon />
+        <span>
+          <span>{repository.title}</span>
+          <span>{repoPair}</span>
         </span>
       </a>
     </li>
