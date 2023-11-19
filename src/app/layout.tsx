@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import { cookies } from 'next/headers'
 import type { Metadata } from 'next'
 import { Inter, Pixelify_Sans } from 'next/font/google'
 import HeaderNavigation from "@/components/layout/HeaderNavigation"
@@ -20,8 +21,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const cookieStore = cookies()
+  const theme = cookieStore.get('theme')
+
   return (
-    <html lang="en">
+    <html lang="en" data-theme={theme ? theme.value : 'dark'}>
       <body className={`${inter.className} ${pixelSans.variable}`}>
         <HeaderNavigation />
         <div style={{minHeight: "100vh"}}>

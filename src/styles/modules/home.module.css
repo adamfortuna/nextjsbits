@@ -66,14 +66,14 @@
 /* Show the current one on hover */
 .select li:first-child,
 .select li a:hover {
-  color: lightgreen;
+  color: var(--color-featured);
 }
 .select li:first-child a svg,
 .select li a:hover svg {
   visibility: visible;
 }
 .select:hover li:first-child a:not(:hover) {
-  color: white;
+  color: var(--color-text);
 }
 .select:hover li:first-child a:not(:hover) svg {
   visibility: hidden;

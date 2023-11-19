@@ -11,15 +11,35 @@
 .title {
   font-family: var(--font-pixel);
   font-size: 36px;
+  padding: var(--space-2) var(--space-2);
+  border-radius: 4px;
 }
 
 .navLink {
-  font-size: 20px;
-  color: white;
+  font-size: var(--text-xl);
+  color: var(--color-text);
   padding: var(--space-2) var(--space-2);
   margin: 0 var(--space-2);
+  border-radius: 4px;
 }
 .title:hover, .navLink:hover {
-  background-color: #fff;
-  color: #000;
+  background-color: var(--color-text);
+  color: var(--color-background);
+}
+
+.theme {
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid var(--color-text);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  padding: var(--space-1);
+}
+.theme svg {
+  width: 18px;
+  height: 18px;
+}
+.theme:hover {
+  background-color: var(--color-text);
+  color: var(--color-background);
 }

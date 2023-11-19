@@ -22,37 +22,35 @@
   --text-2xl: 48px;
 
   /* Light Mode */
-  --color-text: 0, 0, 0;
-  --color-background: 255, 255, 255;
+  --color-text: #000;
+  --color-background: #FFF;
   --color-background-800: #e2e8f0;
   --color-background-900: #f1f5f9;
   --color-background-950: #f8fafc;
   
   --color-dotborder: #777;
-  --color-featured: #57ff5d;
+  --color-featured: #22c55e;
   --color-secondary: #999;
   --color-subdued: #708c75;
-  --color-highlight: lightGreen;
+  --color-highlight: #16a34a;
 
 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Dark Mode */
-    --color-text: 255, 255, 255;
-    --color-background: 0, 0, 0;
-    
-    --color-background-800: #1e293b;
-    --color-background-900: #0f172a;
-    --color-background-950: #020617;
+[data-theme="dark"] {
+  /* Dark Mode */
+  --color-text: #FFF;
+  --color-background: #000;
+  
+  --color-background-800: #1e293b;  
+  --color-background-900: #0f172a;
+  --color-background-950: #020617;
 
-    --color-dotborder: #777;
-    --color-featured: #57ff5d;
-    --color-secondary: #777;
-    --color-subdued: #708c75;
-    --color-highlight: lightGreen;
-  }
+  --color-dotborder: #777;
+  --color-featured: #57ff5d;
+  --color-secondary: #777;
+  --color-subdued: #708c75;
+  --color-highlight: lightGreen;
 }
 
 * {
@@ -68,8 +66,8 @@ body {
 }
 
 body {
-  color: rgb(var(--color-text));
-  background-color: rgb(var(--color-background));
+  color: var(--color-text);
+  background-color: var(--color-background);
 }
 
 a {
@@ -79,7 +77,7 @@ a {
 
 @media (prefers-color-scheme: dark) {
   html {
-    color-scheme: dark;
+    color-scheme: light;
   }
 }
 

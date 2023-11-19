@@ -2,6 +2,7 @@ import Link from "next/link"
 import styles from '@/styles/modules/HeaderNavigation.module.css'
 import utils from "@/styles/modules/utilities.module.css"
 import Container from "./Container"
+import ThemeSwitcher from "./ThemeSwitcher"
 
 export default function HeaderNavigation() {
   return (
@@ -20,10 +21,10 @@ export default function HeaderNavigation() {
               <li>
                 <Link href="/tools" className={styles.navLink}>Tools</Link>
               </li>
+              <li>
+                <ThemeSwitcher />
+              </li>
             </ul>
-            {/* <button type="button" className={styles.search}>
-              Search
-            </button> */}
           </nav>
         </nav>
       </div>
