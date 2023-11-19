@@ -32,8 +32,8 @@ export function extractRepo(url:string) {
   }
 }
 
-export function daysBetweenDates(date1: Date, date2: Date | null) {
-  if (!date2) {
+export function daysBetweenDates(date1: Date | null, date2: Date | null) {
+  if (!date1 || !date2) {
     return false;
   }
   // Convert both dates to milliseconds
