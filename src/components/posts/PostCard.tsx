@@ -5,6 +5,8 @@ import { FlagSharpSolid } from "../svgs/icons";
 
 
 export default function PostCard({post}:{post:PostType}) {
+  const date = post.modifiedDate ? post.modifiedDate : post.date
+
   return (
     <div className={styles.card}>
       <div className={styles.cardInner}>
@@ -24,9 +26,7 @@ export default function PostCard({post}:{post:PostType}) {
           </ul>
         </div>
         <p className={styles.footer}>
-          {post.modifedDate.toLocaleDateString(undefined, {
-          dateStyle: "medium",
-        })}
+          {date.toLocaleDateString(undefined, { dateStyle: "medium", })}
         </p>
       </div>
     </div>

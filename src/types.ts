@@ -73,7 +73,7 @@ export interface CommentType {
   author: AuthorType
   content: string
   id: number
-  date: string
+  date: Date
   type: CommentTypeType
   webmention: WebmentionType
   root: boolean
@@ -173,7 +173,7 @@ export interface ArticleType {
   id: number
   slug: string
   title: string
-  modifedDate: Date
+  modifiedDate: Date | null
   date: Date
   url: string
   featuredImage?: WordpressImageType

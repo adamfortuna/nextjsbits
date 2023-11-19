@@ -50,7 +50,7 @@ export const getCachedPost = unstable_cache(
 );
 
 export const getPost = (slug: string) => {
-  if (process.env.NODE_ENV === "production") {
+  if (Boolean(process.env.USE_CACHE)) {
     return getCachedPost(slug)
   } else {
     return loadPost(slug)

@@ -37,7 +37,7 @@ export const getCachedTool = unstable_cache(
 );
 
 export const getTool = (slug: string) => {
-  if (process.env.NODE_ENV === "production") {
+  if (Boolean(process.env.USE_CACHE)) {
     return getCachedTool(slug)
   } else {
     return loadTool(slug)

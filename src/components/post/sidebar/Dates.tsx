@@ -18,16 +18,16 @@ function SingleDate({date, title}:{date:Date, title: string}) {
   )
 }
 export default function Dates({post}:{post:PostType}) {
-  const { date, modifedDate } = post
-  const daysBetween = daysBetweenDates(date, modifedDate)
+  const { date, modifiedDate } = post
+  const daysBetween = daysBetweenDates(date, modifiedDate)
   const showModified = daysBetween ? daysBetween > 30 : false
 
   return (
     <aside className={styles.info}>
       <h3 className={styles.infoHeader}>Dates</h3>
       <SingleDate date={date} title="Written" />
-      {modifedDate && showModified ? (
-        <SingleDate date={modifedDate} title="Updated" />
+      {modifiedDate && showModified ? (
+        <SingleDate date={modifiedDate} title="Updated" />
       ) : false}
     </aside>
   )

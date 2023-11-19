@@ -1,8 +1,8 @@
 import { ArticleType, AuthorType, CommentType, PostType, TagType, ToolType, WebmentionType, WordPressCommentType, WordpressContentType, WordpressPostType, WordpressToolType } from "@/types"
 
 export const sortByDateDesc = (a1: ArticleType, a2: ArticleType) => {
-  const a1d = new Date(a1.date).getTime()
-  const a2d = new Date(a2.date).getTime()
+  const a1d = a1.date.getTime()
+  const a2d = a2.date.getTime()
   if (a1d === a2d) {
     return 0
   }
@@ -65,7 +65,7 @@ const parseReplies = (parentCommentDatadatabseId: number, comments: WordPressCom
   return replies
     .map((comment) => parseComment(comment, comments))
     .sort((a, b) => {
-      return new Date(a.date).getTime() - new Date(b.date).getTime()
+      return a.date.getTime() - b.date.getTime()
     })
 }
 
@@ -78,7 +78,7 @@ const parseComment = (wpComment: WordPressCommentType, comments: WordPressCommen
     id: wpComment.databaseId,
     author: parseCommentAuthor(wpComment),
     content: wpComment.content,
-    date: wpComment.date,
+    date: new Date(wpComment.date),
     type: wpComment.type,
     root: wpComment.parentDatabaseId === 0,
     parentDatabaseId: wpComment.parentDatabaseId,
@@ -106,7 +106,7 @@ export const parseContent = (content: WordpressContentType): ArticleType => {
     title: content.title,
     slug: content.slug,
     date: new Date(content.date),
-    modifedDate: new Date(content.modified),
+    modifiedDate: content.modified ? new Date(content.modified) : null,
     featuredImage: content.featuredImage?.node ? content.featuredImage?.node : null,
     content: content.content || null,
     commentCount: comments ? comments.length : content.commentCount || null,
