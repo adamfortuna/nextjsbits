@@ -4,6 +4,7 @@ import { getPosts } from "@/queries/posts/loadPosts";
 import { notFound, redirect } from "next/navigation";
 
 export const revalidate = 3600
+export const dynamic = 'force-static'
 
 export interface PageProps {
   params: {

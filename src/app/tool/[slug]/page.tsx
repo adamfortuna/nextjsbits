@@ -4,6 +4,7 @@ import { getTools } from "@/queries/tools/loadTools";
 import { notFound } from "next/navigation";
 
 export const revalidate = 3600
+export const dynamic = 'force-static'
 
 export interface PageProps {
   params: {
