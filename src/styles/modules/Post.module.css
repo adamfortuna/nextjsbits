@@ -15,7 +15,6 @@
 .content {
   width: 100%;
   flex-grow: 1;
-  padding: var(--space-4);
 }
 @media (min-width: var(--min-width-lg)) {
   .content {

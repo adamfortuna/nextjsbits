@@ -1,11 +1,41 @@
 .prose {
-  font-size: 18px;
+  font-size: var(--text-lg);
   position: relative;
 }
-.prose p {
-  margin: var(--space-4) 0;
+
+
+/* Headers */
+.prose h2 {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-secondary);
+}
+.prose h3 {
+  margin-top: var(--space-12);
 }
 
+
+
+/* Links */
+.prose p > a {
+  color: var(--color-highlight);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-highlight);
+}
+.prose p > a:hover {
+  color: var(--color-featured);
+  border-bottom: 1px solid var(--color-featured);
+}
+
+
+
+/* Common Elements */
+.prose > p {
+  margin: var(--space-4) 0;
+}
+.prose ul, .prose ol {
+  margin: var(--space-4);
+}
 .prose figure, 
 .prose figure img {
   max-width: 100%;
@@ -13,23 +43,70 @@
 }
 
 
-.prose .callout {
-  font-size: 20px;
-  border-left: 4px solid pink;
-  padding-left: var(--space-4);
+
+
+
+/* Code Blocks with title */
+.prose .code {
+  border: 1px solid var(--color-background-700);
+  border-radius: 6px;
 }
-.prose .callout--warning {
-  font-size: 20px;
-  border-left: 4px solid yellow;
-  padding-left: var(--space-4);
+.prose .code > p {
+  padding: var(--space-4) var(--space-2);
+  font-family: var(--font-mono);
+  font-size: var(--text-md);
+  color: var(--color-background-400);
+  display: flex;
+  border-bottom: 1px solid var(--color-background-700);
+}
+:root {
+  --icon-terminal: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath d='M5.1 59.7c-6.5-6-6.9-16.1-.8-22.6s16.1-6.9 22.6-.8l224 208c3.3 3 5.1 7.3 5.1 11.7s-1.9 8.7-5.1 11.7l-224 208c-6.5 6-16.6 5.6-22.6-.8s-5.6-16.6 .8-22.6L216.5 256 5.1 59.7zM240 448H560c8.8 0 16 7.2 16 16s-7.2 16-16 16H240c-8.8 0-16-7.2-16-16s7.2-16 16-16z'/%3E%3C/svg%3E");
 }
 
+.prose .code > p.code-terminal:before {
+  width: 18px;
+  height: 20px;
+  display: inline-block;
+  content: '';
+  -webkit-mask: var(--icon-terminal) no-repeat 50% 50%;
+  mask: var(--icon-terminal) no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  background-color: var(--color-background-400);
+  margin-right: var(--space-2);
+  margin-left: var(--space-2);
+}
+
+.prose .code > pre {
+  display: block;
+  padding: var(--space-4) var(--space-4);
+  white-space: pre-wrap;
+}
+.prose .shcb-language {
+  display: none;
+}
+
+
+
+/* Callouts */
+
+.prose .callout {
+  font-size: 20px;
+  border-left: 8px solid var(--color-featured);
+  padding-left: var(--space-4);
+}
+.prose .callout.callout-warning {
+  border-color: yellow;
+}
+
+
+/* Inline code */
 .prose p > code {
-  background-color: white;
-  color: black;
+  background-color: var(--color-highlight);
+  color: var(--color-background-950);
   border-radius: 2px;
   padding: 0 var(--space-1);
 }
-.prose pre.wp-block-code {
-  border: 1px solid #555;
+.prose > pre.wp-block-code {
+
 }
