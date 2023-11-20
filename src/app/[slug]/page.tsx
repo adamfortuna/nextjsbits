@@ -1,3 +1,4 @@
+import '@/styles/code.css'
 import PostPage from "@/components/post/PostPage";
 import { getPost } from "@/queries/posts/loadPost";
 import { getPosts } from "@/queries/posts/loadPosts";
